@@ -18,6 +18,17 @@
 @synthesize stripSliderAppDelegate;
 @synthesize dateGame;
 
+- (void) dealloc
+{
+	[gameSlider release];
+	[background release];
+	[timeLabel release];
+	[movedLabel release];
+	[stripSliderAppDelegate release];
+	[dateGame release];
+	[super dealloc];
+}
+
 - (void) didView
 {
 	[gameSlider didView];
@@ -100,17 +111,6 @@
 	}
 	[stripSliderAppDelegate completeGame];
 	
-}
-
-- (void) dealloc
-{
-	[gameSlider release];
-	[background release];
-	[timeLabel release];
-	[movedLabel release];
-	[stripSliderAppDelegate release];
-	[dateGame release];
-	[super dealloc];
 }
 
 

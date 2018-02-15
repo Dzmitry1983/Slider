@@ -12,6 +12,12 @@
 
 @synthesize stripSliderAppDelegate;
 
+-(void) dealloc
+{
+	[stripSliderAppDelegate release];
+	[super dealloc];
+}
+
 -(void) startTimer
 {
 	NSTimer *timer = [[NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(timerFired:) userInfo:nil repeats:NO] retain];
@@ -26,12 +32,6 @@
 	timer = nil;
 	[self removeFromSuperview];
 	[stripSliderAppDelegate setMyGalleryScreen];
-}
-
--(void) dealloc
-{
-	[stripSliderAppDelegate release];
-	[super dealloc];
 }
 
 @end

@@ -29,7 +29,7 @@
 @property (nonatomic, retain) IBOutlet StripSliderAppDelegate *stripSliderAppDelegate;
 
 - (void) didView;
-- (void) selectedGirl:(eGirlsButtons)girl isStripped:(bool)stripped;
+- (void) selectedGirl:(EGirlsButtons)girl isStripped:(bool)stripped;
 - (IBAction) changePage:(id)sender;
 - (IBAction) onMenu:(id)sender;
 

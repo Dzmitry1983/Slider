@@ -23,16 +23,23 @@
 @synthesize gameScreen;
 @synthesize gameMenu;
 
+- (void)dealloc
+{
+	[window release];
+	[myGallery release];
+	[splashScreen release];
+	[fullScreen release];
+	[gameScreen release];
+	[gameMenu release];
+	[super dealloc];
+}
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
-
-    // Override point for customization after application launch
-	//[window 
-	[[UIApplication sharedApplication] setStatusBarHidden:TRUE];
-	[window addSubview:splashScreen];
+- (void)applicationDidFinishLaunching:(UIApplication *)application
+{
+	[window.rootViewController.view addSubview:splashScreen];
 	[splashScreen startTimer];
 	Girls *girl = [[Database instance] getGirlProfile];
-	if (girl)
+	if (girl != NULL)
 	{
 		[[Girls instance] setGirls:girl];
 	}
@@ -102,22 +109,8 @@
 
 - (void) viewGameMenu
 {
-//	[window 
 	[gameMenu didView];
 	[window addSubview:gameMenu];
 }
-
-
-
-- (void)dealloc {
-    [window release];
-	[myGallery release];
-	[splashScreen release];
-	[fullScreen release];
-	[gameScreen release];
-	[gameMenu release];
-    [super dealloc];
-}
-
 
 @end

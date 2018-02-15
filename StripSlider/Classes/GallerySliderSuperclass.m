@@ -20,6 +20,18 @@
 @synthesize buttonStripped3;
 @synthesize myGallery;
 
+- (void)dealloc
+{
+	[buttonPreview1 release];
+	[buttonPreview2 release];
+	[buttonPreview3 release];
+	[buttonStripped1 release];
+	[buttonStripped2 release];
+	[buttonStripped3 release];
+	[myGallery release];
+	[super dealloc];
+}
+
 - (void) didView
 {
 	[buttonStripped1 setEnabled:FALSE];
@@ -50,19 +62,5 @@
 - (IBAction) onbuttonStripped3:(id)sender
 {
 }
-
-
-- (void)dealloc 
-{
-	[buttonPreview1 release];
-	[buttonPreview2 release];
-	[buttonPreview3 release];
-	[buttonStripped1 release];
-	[buttonStripped2 release];
-	[buttonStripped3 release];
-	[myGallery release];
-    [super dealloc];
-}
-
 
 @end

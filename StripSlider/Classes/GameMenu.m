@@ -19,6 +19,17 @@
 @synthesize buttonSexy;
 @synthesize buttonOff;
 
+- (void) dealloc
+{
+	[buttonLevelEasy release];
+	[buttonLevelNormal release];
+	[buttonSlide release];
+	[buttonSexy release];
+	[buttonOff release];
+	[stripSliderAppDelegate release];
+	[super dealloc];
+}
+
 - (void) didView
 {
 	[self setAllButtons];
@@ -108,17 +119,5 @@
 			break;
 	}
 }
-
-- (void) dealloc
-{
-	[buttonLevelEasy release];
-	[buttonLevelNormal release];
-	[buttonSlide release];
-	[buttonSexy release];
-	[buttonOff release];
-	[stripSliderAppDelegate release];
-	[super dealloc];
-}
-
 
 @end

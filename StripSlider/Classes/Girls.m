@@ -8,13 +8,13 @@
 
 #import "Girls.h"
 
-static Girls* girl = NULL;
+static Girls *girl = NULL;
 
 @implementation Girls
 
 
 
-+ (Girls*)instance
++ (Girls *)instance
 {
 	if (!girl)
 	{

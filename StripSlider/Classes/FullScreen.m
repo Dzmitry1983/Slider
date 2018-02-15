@@ -34,6 +34,16 @@ NSString *girlsPreview_s6 = @"GirlsPreview_PoliceUndressed.png";
 @synthesize backgroundPopupView;
 @synthesize button;
 
+- (void) dealloc
+{
+	[backgroundView release];
+	[backgroundPopupView release];
+	[popapView release];
+	[stripSliderAppDelegate release];
+	[button release];
+	[super dealloc];
+}
+
 - (void) selectedGirl:(int)girl isStripped:(bool)stripped
 {
 	NSString *imageName = NULL;
@@ -177,16 +187,5 @@ NSString *girlsPreview_s6 = @"GirlsPreview_PoliceUndressed.png";
 {
 	[popapView setHidden:TRUE];
 }
-
-- (void) dealloc
-{
-	[backgroundView release];
-	[backgroundPopupView release];
-	[popapView release];
-	[stripSliderAppDelegate release];
-	[button release];
-	[super dealloc];
-}
-
 
 @end

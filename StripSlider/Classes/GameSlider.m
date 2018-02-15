@@ -15,6 +15,14 @@
 @synthesize touchesView;
 @synthesize gameScreen;
 
+
+- (void) dealloc
+{
+	[touchesView release];
+	[gameScreen release];
+	[super dealloc];
+}
+
 - (void) didView
 {	
 	for (UIView *vi in [self subviews])
@@ -202,7 +210,7 @@
 	int addedR = [NSDate timeIntervalSinceReferenceDate];
 	addedR = (abs(addedR)) % 10;
 	int r = (rand() + addedR) % [numbersForShake count];
-	number = [[numbersForShake objectAtIndex:r] longValue];
+	number = [[numbersForShake objectAtIndex:r] intValue];
 	[array exchangeObjectAtIndex:number withObjectAtIndex:numberZero];
 	number = numberZero;
 	[numbersForShake release];
@@ -539,13 +547,5 @@
 	}
 	
 }
-
-- (void) dealloc
-{
-	[touchesView release];
-	[gameScreen release];
-	[super dealloc];
-}
-
 
 @end

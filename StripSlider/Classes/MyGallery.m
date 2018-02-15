@@ -16,14 +16,16 @@
 @synthesize gallerySlider2;
 @synthesize stripSliderAppDelegate;
 
+const CGSize scrollViewSize = {640, 400};
+
 - (void) didView
 {
-	[scrollView setContentSize:CGSizeMake(640, 400)];
+	[scrollView setContentSize:scrollViewSize];
 	[gallerySlider1 didView];
 	[gallerySlider2 didView];
 }
 
-- (void) selectedGirl:(eGirlsButtons)girl isStripped:(bool)stripped
+- (void) selectedGirl:(EGirlsButtons)girl isStripped:(bool)stripped
 {
 	[self removeFromSuperview];
 	[Girls instance].currentGirl = girl;

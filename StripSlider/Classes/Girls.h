@@ -16,7 +16,7 @@ typedef enum GirlsButtons
 	kGirlsButtonMaid,
 	kGirlsButtonNurse,
 	kGirlsButtonPolice
-} eGirlsButtons;
+} EGirlsButtons;
 
 typedef enum GirlsDificult
 {
@@ -40,7 +40,7 @@ typedef enum GirlsSound
 	bool isOpenedNurse;
 	bool isOpenedPolice;
 	
-	eGirlsButtons currentGirl;
+	EGirlsButtons currentGirl;
 	bool currentStrip;
 	
 	int moveCount;
@@ -56,7 +56,7 @@ typedef enum GirlsSound
 @property (nonatomic, assign) bool isOpenedNurse;
 @property (nonatomic, assign) bool isOpenedPolice;
 @property (nonatomic, assign) bool currentStrip;
-@property (nonatomic, assign) eGirlsButtons currentGirl;
+@property (nonatomic, assign) EGirlsButtons currentGirl;
 @property (nonatomic, assign) int dificult;
 @property (nonatomic, assign) int sound;
 @property (nonatomic, assign) int moveCount;
